@@ -1,5 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+body{
+  background-color: #E3E6E6;
+}
+
+:root {
+  /* Colors*/
+  --dark-yellow: #FF9900;
+  --light-yellow: #F7CA00;
+  --navbar: #131921;
+  --letter: #808387;
+  --link-blue: #007185;
+
+  /* Const */
+  --radius-sm: 5px;
+  --radius-md: 15px;
 }
