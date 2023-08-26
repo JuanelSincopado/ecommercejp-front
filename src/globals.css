@@ -1,14 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
-body{
+body {
   background-color: #E3E6E6;
+}
+
+.container {
+  margin: 0 20px;
 }
 
 :root {
@@ -16,12 +20,15 @@ body{
   --dark-yellow: #FF9900;
   --light-yellow: #F7CA00;
   --navbar: #131921;
-  --letter: #808387;
+  --light-letter: #808387;
+  --dark-letter: #363636;
   --link-blue: #007185;
+  --red-like: #e83212;
 
   /* Const */
   --radius-sm: 5px;
   --radius-md: 15px;
+  --border-color: #dddcdc;
 }
 
 /* --------------- BUTTON -------------------*/
@@ -29,12 +36,15 @@ body{
   background-color: transparent;
   border: none;
   padding: 10px;
-  width: 50px;
-  height: 50px;
   font-size: 20px;
 }
 
 /* ------------------ SVG ------------------------ */
+.svg-size-sm {
+  width: 10px;
+  height: 10px;
+}
+
 .svg-size-md {
   width: 20px;
   height: 20px;
@@ -48,5 +58,69 @@ body{
   width: 100%;
   align-items: center;
   box-shadow: 0px 0px 10px 0px #a0a0a0;
+  padding: 0 10px;
 }
 
+/* ------------------ CARD --------------------------*/
+
+.list-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, .1fr));
+  justify-content: center;
+  grid-gap: 0;
+}
+
+.card {
+  margin-top: 20px;
+  border-radius: var(--radius-md);
+  border: solid 1px var(--border-color);
+  width: 180px;
+  overflow: hidden;
+  background-color: white;
+  position: relative;
+}
+
+.card__image {
+  object-fit: cover;
+}
+
+.card__text {
+  border-top: solid 1px var(--border-color);
+  padding: 10px 10px;
+}
+
+.card__text_title {
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--dark-letter);
+}
+
+.card__star {
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+  margin-top: 5px;
+}
+
+.card__price {
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.fav__button{
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background-color: var(--border-color);
+  border: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 100%;
+  box-shadow: 0 0 10px 1px var(--border-color);
+  cursor: pointer;
+}
+
+.fav__image {
+  filter: invert(26%) sepia(84%) saturate(5981%) hue-rotate(2deg) brightness(99%) contrast(86%);
+}
