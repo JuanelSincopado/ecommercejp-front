@@ -28,11 +28,9 @@ const Card = () => {
         <p className="card__price">$25.000.000</p>
       </div>
 
-      {/* <div className="fav__container"> */}
-        <button onClick={toggle} className="fav__button">
-          <Image src={fav ? heartSolid : heartOutline} alt="fav" className="svg-size-sm fav__image" />
-        </button>
-      {/* </div> */}
+      <button onClick={toggle} className="fav__button">
+        <Image src={fav ? heartSolid : heartOutline} alt="fav" className="svg-size-sm fav__image" />
+      </button>
     </div>
   );
 }

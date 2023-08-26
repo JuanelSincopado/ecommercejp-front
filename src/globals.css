@@ -13,6 +13,7 @@ body {
 
 .container {
   margin: 0 20px;
+  margin-top: 80px;
 }
 
 :root {
@@ -24,6 +25,7 @@ body {
   --dark-letter: #363636;
   --link-blue: #007185;
   --red-like: #e83212;
+  --body: #E3E6E6;
 
   /* Const */
   --radius-sm: 5px;
@@ -36,6 +38,8 @@ body {
   background-color: transparent;
   border: none;
   padding: 10px;
+  width: 50px;
+  height: 50px;
   font-size: 20px;
 }
 
@@ -53,12 +57,92 @@ body {
 /* ------------------ NAVBAR ----------------------- */
 .navbar {
   display: flex;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  background-color: var(--body);
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
   align-items: center;
   box-shadow: 0px 0px 10px 0px #a0a0a0;
   padding: 0 10px;
+  height: 80px;
+  padding: 0 20px;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
+  position: fixed;
+  z-index: 2;
+  top: 80px;
+  left: 0;
+  background-color: var(--body);
+  border-top: solid 1px var(--border-color);
+  transition: all 0.2s ease;
+
+  text-align: center;
+  list-style: none;
+  border-bottom: solid 1px var(--border-color);
+}
+
+.nav-menu li {
+  height: 100%;
+  padding: 20px 0;
+}
+
+.disable {
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
+  position: fixed;
+  z-index: 2;
+  top: 80px;
+  left: -100%;
+  background-color: var(--body);
+  border-top: solid 1px var(--border-color);
+  transition: all 0.2s ease;
+
+  text-align: center;
+  list-style: none;
+  border-bottom: solid 1px var(--border-color);
+}
+
+.nav-menu-pc {
+  display: none;
+}
+
+@media (min-width: 768px) {
+
+  .nav-menu {
+    display: none;
+  }
+
+  .disable {
+    display: none;
+  }
+
+  .navbar__menu {
+    display: none;
+  }
+
+  .nav-menu-pc {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    background-color: transparent;
+    border: none;
+    list-style: none;
+    z-index: 0;
+  }
+
+  .nav-menu-pc li {
+    height: 100%;
+    margin: 0 20px;
+  }
+
 }
 
 /* ------------------ CARD --------------------------*/
@@ -108,7 +192,7 @@ body {
   margin-top: 5px;
 }
 
-.fav__button{
+.fav__button {
   position: absolute;
   top: 5px;
   right: 10px;
